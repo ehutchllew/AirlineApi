@@ -29,6 +29,7 @@ namespace AirlineApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<AirlineDbContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("AirlineConnection")));
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
