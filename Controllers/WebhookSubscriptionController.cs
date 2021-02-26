@@ -22,7 +22,7 @@ namespace AirlineApi.Controllers
         }
 
         [HttpGet("{secret}", Name = "GetSubscriptionBySecret")]
-        public ActionResult<WebhookSubscriptionReadDto> GetSubscriptionBySecret([FromQuery] string secret)
+        public ActionResult<WebhookSubscriptionReadDto> GetSubscriptionBySecret([FromRoute] string secret)
         {
             WebhookSubscription subscription = this._context.WebhoookSubsriptions.FirstOrDefault(s => s.Secret == secret);
 

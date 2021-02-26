@@ -11,7 +11,7 @@ namespace AirlineApi.Dtos
 
         public string Secret { get; set; }
 
-        public WebhookTypes WebhookType { get; set; }
+        public string WebhookType { get; set; }
 
         public string WebhookPublisher { get; set; }
     }

@@ -17,7 +17,7 @@ namespace AirlineApi.Models
         public string Secret { get; set; }
 
         [Required]
-        public WebhookTypes WebhookType { get; set; }
+        public string WebhookType { get; set; }
 
         [Required]
         public string WebhookPublisher { get; set; }

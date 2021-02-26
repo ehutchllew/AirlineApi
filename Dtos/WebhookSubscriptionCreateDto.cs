@@ -10,6 +10,6 @@ namespace AirlineApi.Dtos
         public string WebhookURI { get; set; }
 
         [Required]
-        public WebhookTypes WebhookType { get; set; }
+        public string WebhookType { get; set; }
     }
 }
