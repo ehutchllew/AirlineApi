@@ -21,7 +21,7 @@ namespace AirlineApi.Controllers
             this._mapper = mapper;
         }
 
-        [HttpGet("{flightCode}")]
+        [HttpGet("{flightCode}", Name = "GetFlightDetailsByCode")]
         public ActionResult<FlightDetailReadDto> GetFlightDetailsByCode([FromRoute] string flightCode)
         {
             FlightDetail flight = this._context.FlightDetails.FirstOrDefault(f => f.FlightCode == flightCode);
