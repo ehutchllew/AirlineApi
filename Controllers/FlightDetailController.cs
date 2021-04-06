@@ -63,5 +63,21 @@ namespace AirlineApi.Controllers
             }
         }
 
+        [HttpPut("{id}")]
+        public ActionResult UpdateFlightDetail([FromRoute] int id, FlightDetailUpdateDto flightDetailUpdateDto)
+        {
+            FlightDetail flight = this._context.FlightDetails.FirstOrDefault(f => f.Id == id);
+
+            if (flight == null)
+            {
+                return NotFound();
+            }
+
+            this._mapper.Map(flightDetailUpdateDto, flight);
+
+            this._context.SaveChanges();
+
+            return NoContent();
+        }
     }
 }
