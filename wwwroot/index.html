@@ -68,7 +68,7 @@
             dangerBox.style.display = "block";
         } else {
             (async () => {
-                const rawResponse = await fetch('localhost:5000/api/webhooksubscription', {
+                const rawResponse = await fetch('localhost:5001/api/webhooksubscription', {
                     method: "post",
                     body: JSON.stringify({
                         webhookUri: webhookURI.value,
@@ -82,6 +82,9 @@
                 const content = await rawResponse.json();
 
                 successMessage.innerHTML = "Webhook Registered, please use secret: " + content.secret + " to validate inbounx requests";
+                successBox.style.display = "block";
+
+                console.log(content);
             })()
         }
     }
